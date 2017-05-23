@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {{ .Hugo.Generator }}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Marcellus+SC'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/{{ with .Site.Params.SyntaxHighlightTheme }}{{ . }}{{ else  }}solarized_dark.min.css{{ end }}">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/{{ index .Site.Data.css.hash "main.css" }}"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .Site.BaseURL }}/index.xml">
+
+    {{ if eq .URL "/" }}
+    <title>{{ .Title }}</title>
+    <meta property='og:title' content="{{ .Title }}">
+    <meta property="og:type" content="website">
+    {{ else }}
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta property='og:title' content="{{ .Title }} - {{ .Site.Title }}">
+    <meta property="og:type" content="article">
+    {{ end }}
+
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
+    {{ with .Params.image }}<meta property="og:image" content="{{ $.Site.BaseURL }}images/{{ . }}">{{ end }}
+
+  </head>
+
+  <body>
+    <header class="nav container column">
+
+<svg width="123px" height="146px" viewBox="0 0 123 146" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-82.000000, -18.000000)">
+            <g id="Logo" transform="translate(83.000000, 19.000000)">
+                <ellipse id="Oval" stroke="#FFFFFF" stroke-width="1.5925248" cx="60.5" cy="60.3515625" rx="60.5" ry="60.3515625"></ellipse>
+                <path d="M43.7828947,30.9698808 L43.7828947,76.9916724" id="Line" stroke="#FFFFFF" stroke-width="1.5925248" stroke-linecap="square"></path>
+                <path d="M29.2257737,62.733861 L92.7106481,62.733861" id="Line" stroke="#FFFFFF" stroke-width="1.5925248" stroke-linecap="square"></path>
+                <path d="M28.5119416,62.7239926 C28.5119416,62.7239926 44.5014013,62.9948679 43.7976816,30.2014223" id="Path-2" stroke="#FFFFFF" stroke-width="1.5925248"></path>
+                <path d="M43.8115689,62.7247996 C43.8115689,62.7247996 61.1829018,63.0929991 60.4791822,30.2995535" id="Path-2-Copy" stroke="#FFFFFF" stroke-width="1.5925248" transform="translate(52.155784, 46.512265) scale(-1, 1) translate(-52.155784, -46.512265) "></path>
+                <path d="M76.4210526,30.9698808 L76.4210526,76.2335526" id="Line-Copy" stroke="#FFFFFF" stroke-width="1.5925248" stroke-linecap="square"></path>
+                <path d="M60.5,62.7224921 C60.5,62.7224921 77.1477067,63.0316623 76.4439871,30.2382167" id="Path-2-Copy-3" stroke="#FFFFFF" stroke-width="1.5925248"></path>
+                <path d="M76.4329895,62.7655316 C76.4329895,62.7655316 93.9471999,63.0156103 93.2434802,30.2221647" id="Path-2-Copy-2" stroke="#FFFFFF" stroke-width="1.5925248" transform="translate(84.848561, 46.493876) scale(-1, 1) translate(-84.848561, -46.493876) "></path>
+                <path d="M14.6945562,99.7796723 C5.53791469,89.2035643 0,75.4227013 0,60.3515625 C0,57.1941193 0.243066566,54.093308 0.711552086,51.066733 C1.0170899,51.076357 1.32756674,51.0863434 1.64304256,51.0966889 C40.4274107,52.3685579 31.4677851,82.9456409 31.4677851,82.9456409 C31.4677851,82.9456409 20.5435443,90.5583031 14.6945562,99.7796723 Z" id="Combined-Shape" stroke="#FFFFFF" stroke-width="1.5925248"></path>
+                <path d="M102.530104,98.2025913 C95.5668591,89.6775716 90.8915421,79.2191135 89.4379861,67.758759 C89.0494558,53.326796 89.4691236,50.7903517 91.153959,50.7903517 C111.174624,50.7903517 117.514851,60.5418122 119.486311,69.1219233 C121.331495,77.1524604 120.729803,82.932315 120.729803,82.932315 C120.729803,82.932315 111.952412,87.9070375 103.856898,99.7377751 C103.856898,99.7377751 103.351493,99.192818 102.530101,98.2025874 Z" id="Combined-Shape-Copy" stroke="#FFFFFF" stroke-width="1.5925248" transform="translate(105.063617, 75.264063) scale(-1, 1) translate(-105.063617, -75.264063) "></path>
+                <path d="M106.345489,99.7333724 C115.058799,89.6487973 120.485199,76.658109 120.965246,62.4166775 C120.831518,62.4196642 120.696908,62.4226829 120.561413,62.4257331 C101.754223,62.8491209 95.8214803,69.9898186 93.4109777,74.0270203 C89.2712732,80.9603553 90.1393028,83.3753415 90.2587374,83.3753415 C90.3488557,83.3753415 99.7279073,89.4460175 106.292642,99.6512544 C106.310323,99.678741 106.327939,99.7061135 106.345489,99.7333724 Z" id="Combined-Shape" stroke="#FFFFFF" stroke-width="1.5925248"></path>
+                <path d="M15.352504,100.527145 C15.1963759,100.352677 15.041249,100.177299 14.8871323,100.001019 C15.0244451,100.134139 15.192256,100.313168 15.352504,100.527145 Z M14.6211521,99.6947307 C6.06280674,89.7726612 0.683665443,77.0435608 0.0607507555,63.0805827 C14.908064,61.6921506 26.5192892,68.3672602 29.7855753,76.6751247 C30.5394269,78.5925615 31.2075207,83.070905 29.3469905,84.4334964 C26.0429612,86.8532592 19.5275427,92.9337074 14.6211521,99.6947307 Z" id="Combined-Shape" stroke="#FFFFFF" stroke-width="1.5925248"></path>
+                <path d="M14.722405,99.8118156 C25.8161386,112.607187 42.2102901,120.703125 60.5,120.703125 C78.7897099,120.703125 95.1838614,112.607187 106.277595,99.8118156 C96.684917,84.6877225 79.7681034,74.6453536 60.5,74.6453536 C41.2318966,74.6453536 24.315083,84.6877225 14.722405,99.8118156 Z" id="Combined-Shape" stroke="#FFFFFF" stroke-width="1.5925248"></path>
+                <path d="M20.2993421,92.9096423 L100.700658,92.9096423" id="Line" stroke="#FFFFFF" stroke-width="1.5925248" stroke-linecap="square"></path>
+                <path d="M31.8421053,83.3804482 L89.5559211,83.3804482" id="Line" stroke="#FFFFFF" stroke-width="1.5925248" stroke-linecap="square"></path>
+                <path d="M18.3092105,102.438836 L103.088816,102.438836" id="Line" stroke="#FFFFFF" stroke-width="1.5925248" stroke-linecap="square"></path>
+                <path d="M30.25,111.96803 L91.1480263,111.96803" id="Line" stroke="#FFFFFF" stroke-width="1.5925248" stroke-linecap="square"></path>
+                <text id="QC" font-family="Oswald-Regular, Oswald" font-size="23.887872" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="47.162216" y="29">QC</tspan>
+                </text>
+                <text id="Interactive" font-family="Oswald-Regular, Oswald" font-size="19.1102976" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="19.9450549" y="143.703125">Interactive</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
+    </header>
+
+
+    <div class="container site">

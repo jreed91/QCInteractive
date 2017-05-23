@@ -1,0 +1,13 @@
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
+@import "header/header";
+
+.container {
+  @include grid-container;
+}
+
+$neat-grid: (
+  columns: 12,
+  gutter: 20px,
+);
