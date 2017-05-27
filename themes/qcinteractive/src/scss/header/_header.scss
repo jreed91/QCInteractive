@@ -7,9 +7,19 @@
   z-index: 500;
   height: 200px;
 
-   @include grid-column(9);
-  @include grid-push(2);
+   @include grid-column(10);
+  @include grid-push(1);
 
+}
+
+main {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+main header {
+  position: relative;
+  height: 100%;
 }
 
 #stripes {
@@ -18,7 +28,7 @@
   overflow: hidden;
   transform: skewY(-12deg);
   transform-origin: 0;
-  @include linear-gradient(45deg, #6B8AC8 25%, #414E85 85%);
+  @include linear-gradient(147deg, #407CC9 0%, #5691C8 100%);
   position: absolute;
 
 
@@ -27,46 +37,57 @@
     position: absolute;
 
     &:nth-child(1) {
-      height: 600px;
+      height: 350px;
       width: 80.33333%;
       right: -20.66666%;
       background: #7C97C6;
-      @include linear-gradient(45deg, #7C97C6 25%, #61709F 85%);
+      @include linear-gradient(45deg, #72A7DA 0%, #71A5D4 100%);
+      animation: 1s ease-out 0s 1 slideInFromLeft;
     }
     &:nth-child(2) {
       width: 30.33333%;
       background: #fff;
-      height: 400px;
+      height: 200px;
       bottom: 0;
-      @include linear-gradient(45deg, #fff 25%, #F6F3F3 85%);
+      @include linear-gradient(45deg, #72A7DA 0%, #71A5D4 100%);
+      animation: 1s ease-out 0s 1 slideInFromLeft;
     }
     &:nth-child(3) {
       width: 100%;
       left: 30.2%;
       background: #fff;
-      height: 400px;
+      height: 200px;
       bottom: 0;
-      @include linear-gradient(45deg, #8B98CD 25%, #585F97 85%);
+      @include linear-gradient(45deg, #427CC1 0%, #68CDEE 100%);
+      animation: 1s ease-out 0s 1 slideInFromRight;
     }
 
   }
 }
 
 #hero {
-  @include grid-column(9);
- @include grid-push(2);
+  @include grid-column(12);
+  @include grid-push(1);
   height: 500px;
   position: relative;
-  top: 350;
+  top: 300;
 
   .hero_copy {
     color: $white;
-    @include grid-column(7);
+    @include grid-column(8);
     font-size: modular-scale(3);
   }
+  .body_text {
+    font-size:.5em;
+    color: $light-blue;
+  }
+
   .device {
     margin-top: -150px;
     @include grid-column(2);
-    @include grid-push(1);
+    animation: 1s ease-out 0s 1 slideInFromBottom;
+  }
+  .hero_cta {
+    @include grid-push(8);
   }
 }

@@ -2,12 +2,74 @@
 @import "base/base";
 @import "neat/neat";
 @import "header/header";
+@import "animation";
 
 .container {
   @include grid-container;
 }
 
-$neat-grid: (
-  columns: 12,
-  gutter: 20px,
-);
+
+.btn_large {
+  width: 170px;
+  height: 50px;
+}
+
+.our_work {
+    height: 600px;
+}
+
+#our_work {
+  @include grid-column(12);
+  @include grid-push(1);
+  margin-top: 100px;
+
+
+  h2 {
+    color: #34395C;
+    font-size: modular-scale(3);
+  }
+  .work_items {
+    @include grid-column(11);
+  }
+  .work_item {
+    padding: 20px;
+    @include grid-column(4);
+
+    h3 {
+      color: #34395C;
+      font-weight: 300;
+      margin: 20px 0 20px 0;
+    }
+
+    p {
+      color: #6B7C93;
+    }
+  }
+}
+
+
+  #articles_container {
+    position: relative;
+    padding-top: 110px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 500%;
+        top: 0;
+        transform: skewY(-12deg);
+        background: #f6f9fc;
+        margin-top: 250px;
+      }
+
+  }
+
+
+  .articles {
+    @include grid-column(12);
+    @include grid-push(1);
+    position: relative;
+    margin-top: 350px;
+  }
